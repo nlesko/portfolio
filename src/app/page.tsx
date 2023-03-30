@@ -1,8 +1,10 @@
 import { DevicePhoneMobileIcon, HeartIcon } from '@heroicons/react/20/solid';
 import Section from "@/containers/Section";
 import FeatureCard from "@/components/FeatureCard";
-import { Feature } from "@/types";
-import { NCloudScaleIcon, RocketIcon } from '@/components/icons';
+import type { Feature, Skill } from "@/types";
+import { AdobePhotoshopIcon, BootstrapIcon, DockerIcon, ExpressJsIcon, GitIcon, JavaScriptIcon, MicrosoftSqlServerIcon, MongoDbIcon, NCloudScaleIcon, NodeJsIcon, PostgreSqlIcon, PrestaShopIcon, ReactJsIcon, RocketIcon, TailwindIcon, TypeScriptIcon, VueJsIcon } from '@/components/icons';
+import SkillCard from '@/components/SkillCard';
+import { SkillCategory } from '@/enums';
 
 const FeatureList = () => {
   const features: Array<Feature> = [
@@ -41,6 +43,110 @@ const FeatureList = () => {
   );
 };
 
+const SkillSetList = () => {
+  const skillSets: Array<Skill> = [
+    {
+      id: 1,
+      name: 'React',
+      icon: ReactJsIcon,
+      category: SkillCategory.FRONTEND
+    },
+    {
+      id: 2,
+      name: 'JavaScript',
+      icon: JavaScriptIcon,
+      category: SkillCategory.FRONTEND
+    },
+    {
+      id: 3,
+      name: 'TypeScript',
+      icon: TypeScriptIcon,
+      category: SkillCategory.FRONTEND
+    },
+    {
+      id: 4,
+      name: 'Node',
+      icon: NodeJsIcon,
+      category: SkillCategory.BACKEND
+    },
+    {
+      id: 5,
+      name: 'Tailwind',
+      icon: TailwindIcon,
+      category: SkillCategory.FRONTEND
+    },
+    {
+      id: 6,
+      name: 'Bootstrap',
+      icon: BootstrapIcon,
+      category: SkillCategory.FRONTEND
+    },
+    {
+      id: 7,
+      name: "VueJS",
+      icon: VueJsIcon,
+      category: SkillCategory.FRONTEND
+    },
+    {
+      id: 8,
+      name: "Express",
+      icon: ExpressJsIcon,
+      category: SkillCategory.BACKEND
+    },
+    {
+      id: 9,
+      name: "MongoDB",
+      icon: MongoDbIcon,
+      category: SkillCategory.BACKEND
+    },
+    {
+      id: 10,
+      name: "MSSQL",
+      icon: MicrosoftSqlServerIcon,
+      category: SkillCategory.BACKEND
+    },
+    {
+      id: 11,
+      name: "PostgreSQL",
+      icon: PostgreSqlIcon,
+      category: SkillCategory.BACKEND
+    },
+    {
+      id: 12,
+      name: "Git",
+      icon: GitIcon,
+      category: SkillCategory.OTHER
+    },
+    {
+      id: 13,
+      name: "Prestashop",
+      icon: PrestaShopIcon,
+      category: SkillCategory.OTHER
+    },
+    {
+      id: 14,
+      name: "Photoshop",
+      icon: AdobePhotoshopIcon,
+      category: SkillCategory.OTHER
+    },
+    {
+      id: 16,
+      name: "Docker",
+      icon: DockerIcon,
+      category: SkillCategory.OTHER
+    }
+  ];
+
+  return (
+    <div className="flex flex-wrap">
+      {skillSets.length > 0 && skillSets.map((skill, index) => (
+        <SkillCard skill={skill} key={skill.id} />
+      ))
+      }
+    </div>
+  )
+}
+
 export default function Home() {
   return (
     <main>
@@ -58,6 +164,16 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </Section>
+      <Section title="Toolbox">
+        <div className="flex flex-row px-4">
+          <div className="w-full p-10">
+            <p className="text-xl">
+              Here are a few technologies I’ve been working with recently:
+            </p>
+          </div>
+        </div>
+        <SkillSetList />
       </Section>
     </main>
   )

@@ -1,4 +1,4 @@
-import { IconTypeProps } from "../../data";
+import { IconTypeProps } from "../../types";
 
 export default function ReduxSaga (props: React.PropsWithChildren<IconTypeProps>) {
     return (
