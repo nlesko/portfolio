@@ -1,5 +1,5 @@
 import { ProjectCategory, SkillCategory } from "@/enums";
-import { ForwardRefExoticComponent, SVGProps } from "react";
+import { ForwardRefExoticComponent, PropsWithChildren, ReactElement, SVGProps } from "react";
 
 export type Skill = {
     id: number;
@@ -14,13 +14,13 @@ export type IconTypeProps = {
     className?: string
 }
 
-export type IconType = (props: IconTypeProps| ForwardRefExoticComponent<SVGProps>) => JSX.Element;
+export type IconType = (props: ForwardRefExoticComponent<IconTypeProps>) => ReactElement<any, any> | JSX.Element;
 
 export type Feature = {
     id: number;
     name: string;
     description: string;
-    icon?: React.PropsWithChildren<IconType> | ForwardRefExoticComponent<SVGProps>;
+    icon?: IconType | React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement> & { title?: string, titleId?: string }>;
 }
 
 export type Project = {
