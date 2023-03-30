@@ -14,13 +14,13 @@ export type IconTypeProps = {
     className?: string
 }
 
-export type IconType = (props: ForwardRefExoticComponent<IconTypeProps>) => ReactElement<any, any> | JSX.Element;
+export type IconType = (props: IconTypeProps) => ReactElement<any, any> | JSX.Element;
 
 export type Feature = {
     id: number;
     name: string;
     description: string;
-    icon?: IconType | React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement> & { title?: string, titleId?: string }>;
+    icon: IconType | any;
 }
 
 export type Project = {

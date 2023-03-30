@@ -1,7 +1,7 @@
 import { ForwardRefExoticComponent } from "react";
 import { IconTypeProps } from "../../types";
 
-export default function NCloudScaleIcon(props: ForwardRefExoticComponent<IconTypeProps>) {
+export default function NCloudScaleIcon(props: IconTypeProps) {
 	return (
 		<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" {...props}>
 			<title>Cloud scale</title>

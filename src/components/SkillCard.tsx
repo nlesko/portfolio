@@ -21,13 +21,14 @@ interface Props {
 
 
 const SkillCard: React.FC<Props> = ({ skill, ...props }) => {
+    // const SkillIcon = {...skill.icon}
     return (
         <div className="w-full sm:w-1/2 xl:w-1/4 sm:px-4 mb-6">
             <Card 
                 className="bg-steel-blue-800/30 text-white shadow-md items-center"
                 row
             >
-                <div className="p-6">
+                <div className="p-6">                    
                     {skill.icon ? React.createElement(skill.icon, { className: 'w-12 h-12' }) : null }
                 </div>
                 <CardTitle className="w-full p-6 text-base uppercase text-center">
