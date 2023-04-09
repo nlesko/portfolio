@@ -1,12 +1,12 @@
-import { DevicePhoneMobileIcon, HeartIcon } from '@heroicons/react/20/solid';
+import { DevicePhoneMobileIcon, HeartIcon, ArrowTopRightOnSquareIcon, CodeBracketSquareIcon } from '@heroicons/react/20/solid';
 import Section from "@/containers/Section";
 import FeatureCard from "@/components/FeatureCard";
-import type { Feature, Skill } from "@/types";
-import { AdobePhotoshopIcon, BootstrapIcon, ExpressJsIcon, GitIcon, JavaScriptIcon, MicrosoftSqlServerIcon, MongoDbIcon, NCloudScaleIcon, NodeJsIcon, PostgreSqlIcon, PrestaShopIcon, ReactJsIcon, RocketIcon, TailwindIcon, TypeScriptIcon, VueJsIcon } from '@/components/icons';
-import SkillCard from '@/components/SkillCard';
-import { SkillCategory } from '@/enums';
+import type { Feature, Project } from "@/types";
+import { NCloudScaleIcon, RocketIcon } from '@/components/icons';
+import { ProjectCategory } from '@/enums';
 import SkillSetList from '@/components/SkillSetList';
 import Resume from '@/components/Resume';
+import Image from 'next/image';
 
 const FeatureList = () => {
   const features: Array<Feature> = [
@@ -44,18 +44,105 @@ const FeatureList = () => {
     </div>
   );
 };
+const projects: Array<Project> = [
+  {
+    id: 1,
+    name: "Mountain Climber",
+    description: "Landing page for Travel Agency. Built with CSS Flexbox",
+    imageUrl: "mountain_climber.jpg",
+    demoUrl: "http://nytprojects.dx.am/mountain/",
+    tags: ['React', 'Node', 'CSS'],
+    projectCategory: ProjectCategory.PERSONAL
+  },
+  {
+    id: 2,
+    name: "Guess the Color Game",
+    description: "Simple Guess the Color Game made with JavaScript. The Game asks you to guess colour of RGB value shown in header.",
+    imageUrl: "Guess-the-color-game.jpg",
+    repository: "https://github.com/nlesko/Guess_the_Color_Portfolio",
+    demoUrl: "http://nytprojects.dx.am/guess-the-color/",
+    tags: ['React', 'Node', 'CSS'],
+    projectCategory: ProjectCategory.PERSONAL
+  },
+  {
+    id: 3,
+    name: "Christmas Countdown Clock",
+    description: "In the mood for holidays decided to put together this simple Christmas countdown clock It contains countdown timer that is counting how much time is left till December 25, 2018, 00:00:01 in the night. (will be updated for 2019). Besides timer added simple snow-like background using canvas. Also what kind of Christmas it would be without some Christmas lights? :)",
+    imageUrl: "countdown-clock.jpg",
+    repository: "https://github.com/nlesko/christmas-countdown-clock",
+    demoUrl: "https://nlesko.github.io/projects/christmas-countdown-clock/",
+    tags: ['React', 'Node', 'CSS'],
+    projectCategory: ProjectCategory.PERSONAL
+  },
+  {
+    id: 4,
+    name: "Cryptocurrency Tracker",
+    description: "Cryptocurrency Tracker built with vanilla JS using Coinranking API. Web application will list 50 Cryptocurrencies and show their Icon, name, current worth US dollars and change in last 24h.",
+    imageUrl: "cryptocurrency-tracker.jpg",
+    repository: "https://github.com/nlesko/cryptocurrency-vanilla-js-tracker",
+    demoUrl: "https://nlesko.github.io/projects/cryptocurrency-tracker/",
+    tags: ['React', 'Node', 'CSS'],
+    projectCategory: ProjectCategory.PERSONAL
+  },
+  {
+    id: 5,
+    name: "Vue Smoothies",
+    description: "A simple CRUD Smoothie recipe website using Vue.js, Axios for AJAX calls and Firebase for storing data.",
+    imageUrl: "vue-smoothies.jpg",
+    demoUrl: "https://serene-shore-38026.herokuapp.com/",
+    tags: ['React', 'Node', 'CSS'],
+    projectCategory: ProjectCategory.PERSONAL
+  },
+  {
+    id: 6,
+    name: "Build a Robot",
+    description: "A Robot builder web application that uses Vue.js, Vuex for state managment, Axios for AJAX calls and Express for serving application.",
+    imageUrl: "build-a-bot.jpg",
+    repository: "https://github.com/nlesko/build-a-bot",
+    demoUrl: "https://dry-taiga-74990.herokuapp.com/build",
+    tags: ['React', 'Node', 'CSS'],
+    projectCategory: ProjectCategory.PERSONAL
+  },
+  {
+    id: 7,
+    name: "Web template",
+    description: "Modular, component-based website template built with TWIG template engine, bootstrap, jQuery, SCSS, slick, webpack and more. The template contains configurator for displaying different options on different pages.",
+    imageUrl: "dm_t1.jpg",
+    demoUrl: "http://t1.dimedia.hr/",
+    tags: ['React', 'Node', 'CSS'],
+    projectCategory: ProjectCategory.PROFESSIONAL
+  },
+  {
+    id: 8,
+    name: "Begamont Gradjenje",
+    description: "Website targeted for the residential building market, built with TWIG template engine, bootstrap, sass, webpack, jQuery, and more. The website has features like SVG ground plan hover and clicks events, fullscreen lightbox gallery and more.",
+    imageUrl: "begamont.jpg",
+    demoUrl: "https://www.begamont-gradjenje.hr/",
+    tags: [],
+    projectCategory: ProjectCategory.PROFESSIONAL
+  },
+  {
+    id: 9,
+    name: "Library webshop",
+    description: "Library webshop build with Prestashop e-commerce solution with custom theme and modules.",
+    imageUrl: "ljevak_hr.jpg",
+    demoUrl: "https://www.ljevak.hr/",
+    tags: [],
+    projectCategory: ProjectCategory.PROFESSIONAL
+  }
+];
 
 export default function Home() {
   return (
     <main>
-      <Section title="About">
+      <Section title="">
         <FeatureList />
         <div className="my-20" />
-        <div className="flex flex-row px-4">
-          <div className="w-full p-10">
+        {/* <div className="flex flex-row px-4">
+          <div className="w-full py-10">
             <h3 className="text-4xl mb-4">Who am I?</h3>
             <p className="text-xl">
-              {`Hi, I'm Nikola Leško, a software engineer with experience in building fast and elegant products for global companies. From marketing websites to enterprise apps, I prioritize performance, scalability, and accessibility to deliver optimized solutions. Let's discuss how I can help your business succeed.`}
+              {`Hi, I'm Nikola Leško, a software engineer with experience in building fast and elegant products for global companies. From marketing websites to enterprise apps, I prioritize performance, scalability, and accessibility to deliver optimized solutions. Let's discuss how I can help your business succeed.`} */}
               {/* Hi there! My name is Nikola Leško, and I'm a passionate software engineer with a proven track record of building cutting-edge products for companies and businesses worldwide. I specialize in crafting elegant, fast, and accessible user experiences that meet and exceed client expectations.
               <br />
               <br />
@@ -65,13 +152,17 @@ export default function Home() {
               {`As a self-motivated individual, I'm comfortable working independently or in a team environment. I'm equipped with a diverse set of tools and technologies, which enables me to deliver fast, resilient solutions that meet business needs.`}
 <br /><br />
               I'm always looking for new challenges and opportunities to learn and grow as a developer. So, if you're interested in discussing a potential collaboration or have any questions, please don't hesitate to reach out. */}
-            </p>
+            {/* </p>
           </div>
-        </div>
+        </div> */}
       </Section>
-      <Section title="Toolbox">
+      <Section title="Me & Toolbox">
         <div className="flex flex-row px-4">
-          <div className="w-full p-10">
+          <div className="w-full py-10">
+            <p className="text-xl">
+              {`Hi, I'm Nikola Leško, a software engineer with experience in building fast and elegant products for global companies. From marketing websites to enterprise apps, I prioritize performance, scalability, and accessibility to deliver optimized solutions. Let's discuss how I can help your business succeed.`}
+            </p>
+            <br />
             <p className="text-xl">
               {`As a Full-stack Web Developer / Software Engineer, I'm like a builder with a toolbox full of the latest tech and gadgets. Let me show you what I've got - we can use my tools to build something amazing together`}
               <br />
@@ -87,6 +178,73 @@ export default function Home() {
               <Resume />
         </div>
       </Section>
+      <Section title="Projects" className=''>
+          {projects.length > 0 && projects.map((project, index) => (
+            <div className="flex flex-row mb-6 relative" key={project.id}>
+              <div className="w-1/2 relative z-10 max-w-[560px] h-[315px]">
+                <Image src={'/cryptocurrency-tracker.jpg'} alt={project.name} fill/>
+              </div>
+              <div className="w-1/2 flex flex-col justify-between relative z-20">
+                <h3 className="text-2xl uppercase pl-8 pt-2">
+                  {project.name}
+                </h3>
+                
+                <div className="bg-steel-blue-800/90 -ml-20 text-large p-8">
+                  {project.description}
+                </div>
+                <div className="flex flex-col  mt-2">
+                  
+                  <ul className="flex flex-wrap justify-end pl-8 pb-2">
+                    {project.tags && project.tags.map((tag, index) => (
+                      <li key={index} className="first:ml-0 ml-6 mb-1 font-light tracking-[0.2rem] text-sm">
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                  {(project.repository || project.demoUrl) && (
+                    <ul className="flex flex-row flex-wrap justify-end mt-2">
+                      {project.repository && (
+                        <li className="first:ml-0 ml-6 mb-1 font-light tracking-[0.2rem] text-sm">
+                          <a href={project.repository} target="_blank" rel="noreferrer">
+                            <CodeBracketSquareIcon width={24} height={24} />
+                          </a>
+                        </li>
+                      )}
+                      {project.demoUrl && (
+                        <li className="first:ml-0 ml-6 mb-1 font-light tracking-[0.2rem] text-sm">
+                          <a href={project.repository} target="_blank" rel="noreferrer">
+                            <ArrowTopRightOnSquareIcon width={24} height={24}/>
+                          </a>
+                        </li>
+                      )}
+                    </ul> 
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </Section>
+        <Section title="Projects" className=''>
+          <div className="grid gap-7 grid-cols-3">
+            {projects.length > 0 && projects.map((project, index) => (
+              <div key={project.id} className="flex flex-col p-6 bg-steel-blue-800/90">
+                <h3 className="text-2xl uppercase">
+                  {project.name}
+                </h3>
+                <div className=" text-large">
+                  {project.description}
+                </div>
+                <ul className="flex flex-wrap justify-start">
+                  {project.tags && project.tags.map((tag, index) => (
+                    <li key={index} className="first:ml-0 ml-6 mb-1">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </Section>
     </main>
   )
 }

@@ -28,8 +28,8 @@ export type Project = {
     name: string;
     description: string;
     imageUrl: string;
-    repository: string | null;
-    demoUrl: string | null;
+    repository?: string | undefined;
+    demoUrl?: string | undefined;
     tags: string[];
     projectCategory: ProjectCategory;
 }

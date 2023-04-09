@@ -9,6 +9,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
+    container: {
+      center: true,
+      screens: {
+        '2xl': '1280px',
+      }
+    },
     extend: {
       colors: {
         'steel-blue': {

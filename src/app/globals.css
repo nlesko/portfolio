@@ -15,6 +15,7 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  font-size: 14px;
 }
 
 h1,
@@ -39,4 +40,8 @@ a {
 body {
   @apply bg-steel-blue-900;
   @apply text-white;
+}
+
+.list-[square] li {
+  position: relative;
 }
