@@ -7,6 +7,7 @@ import { ProjectCategory } from '@/enums';
 import SkillSetList from '@/components/SkillSetList';
 import Resume from '@/components/Resume';
 import Image from 'next/image';
+import ProjectCard from '@/components/ProjectCard';
 
 const FeatureList = () => {
   const features: Array<Feature> = [
@@ -67,7 +68,7 @@ const projects: Array<Project> = [
   {
     id: 3,
     name: "Christmas Countdown Clock",
-    description: "In the mood for holidays decided to put together this simple Christmas countdown clock It contains countdown timer that is counting how much time is left till December 25, 2018, 00:00:01 in the night. (will be updated for 2019). Besides timer added simple snow-like background using canvas. Also what kind of Christmas it would be without some Christmas lights? :)",
+    description: "In the mood for holidays decided to put together this simple Christmas countdown clock It contains countdown timer that is counting how much time is left till December 25, 00:00:01 in the night. Besides timer added simple snow-like background using canvas. Also what kind of Christmas it would be without some Christmas lights? :)",
     imageUrl: "countdown-clock.jpg",
     repository: "https://github.com/nlesko/christmas-countdown-clock",
     demoUrl: "https://nlesko.github.io/projects/christmas-countdown-clock/",
@@ -137,13 +138,13 @@ export default function Home() {
     <main>
       <Section title="">
         <FeatureList />
-        <div className="my-20" />
+        {/* <div className="my-20" /> */}
         {/* <div className="flex flex-row px-4">
           <div className="w-full py-10">
             <h3 className="text-4xl mb-4">Who am I?</h3>
             <p className="text-xl">
               {`Hi, I'm Nikola Leško, a software engineer with experience in building fast and elegant products for global companies. From marketing websites to enterprise apps, I prioritize performance, scalability, and accessibility to deliver optimized solutions. Let's discuss how I can help your business succeed.`} */}
-              {/* Hi there! My name is Nikola Leško, and I'm a passionate software engineer with a proven track record of building cutting-edge products for companies and businesses worldwide. I specialize in crafting elegant, fast, and accessible user experiences that meet and exceed client expectations.
+        {/* Hi there! My name is Nikola Leško, and I'm a passionate software engineer with a proven track record of building cutting-edge products for companies and businesses worldwide. I specialize in crafting elegant, fast, and accessible user experiences that meet and exceed client expectations.
               <br />
               <br />
               My experience spans across a variety of industries, and I have developed everything from marketing websites to complex enterprise-level applications. With every project, I prioritize performance, scalability, and accessibility to ensure that my solutions are optimized for scale.`}
@@ -152,99 +153,62 @@ export default function Home() {
               {`As a self-motivated individual, I'm comfortable working independently or in a team environment. I'm equipped with a diverse set of tools and technologies, which enables me to deliver fast, resilient solutions that meet business needs.`}
 <br /><br />
               I'm always looking for new challenges and opportunities to learn and grow as a developer. So, if you're interested in discussing a potential collaboration or have any questions, please don't hesitate to reach out. */}
-            {/* </p>
+        {/* </p>
           </div>
         </div> */}
       </Section>
       <Section title="Me & Toolbox">
-        <div className="flex flex-row px-4">
-          <div className="w-full py-10">
-            <p className="text-xl">
+        <div className="flex flex-col px-4">
+            <p className="mb-4">
               {`Hi, I'm Nikola Leško, a software engineer with experience in building fast and elegant products for global companies. From marketing websites to enterprise apps, I prioritize performance, scalability, and accessibility to deliver optimized solutions. Let's discuss how I can help your business succeed.`}
             </p>
-            <br />
-            <p className="text-xl">
+            
+            <p className="mb-4">
               {`As a Full-stack Web Developer / Software Engineer, I'm like a builder with a toolbox full of the latest tech and gadgets. Let me show you what I've got - we can use my tools to build something amazing together`}
-              <br />
-              <br />
-              Explore the technologies and tools I use to bring ideas to life.
+              
+              
             </p>
-          </div>
+            <p className="">
+            Explore the technologies and tools I use to bring ideas to life.
+            </p>
+          
         </div>
+        <div className="my-20" />
         <SkillSetList />
       </Section>
-      <Section title="My Journey So Far">
+      {/* <Section title="My Journey So Far">
         <div className="w-full p-10">
-              <Resume />
+          <Resume />
+        </div>
+      </Section> */}
+      <Section title="Projects">
+        <div className="w-full p-10">
+          {projects.length > 0 && projects.map((project, index) => (
+            <ProjectCard key={project.id} reverse={index % 2 === 0} project={project} />
+          ))}
         </div>
       </Section>
-      <Section title="Projects" className=''>
+      {/* <Section title="Projects" className=''>
+        <div className="grid gap-7 grid-cols-3">
           {projects.length > 0 && projects.map((project, index) => (
-            <div className="flex flex-row mb-6 relative" key={project.id}>
-              <div className="w-1/2 relative z-10 max-w-[560px] h-[315px]">
-                <Image src={'/cryptocurrency-tracker.jpg'} alt={project.name} fill/>
+            <div key={project.id} className="flex flex-col p-6 bg-steel-blue-800/90">
+              <h3 className="text-2xl uppercase">
+                {project.name}
+              </h3>
+              <div className=" text-large">
+                {project.description}
               </div>
-              <div className="w-1/2 flex flex-col justify-between relative z-20">
-                <h3 className="text-2xl uppercase pl-8 pt-2">
-                  {project.name}
-                </h3>
-                
-                <div className="bg-steel-blue-800/90 -ml-20 text-large p-8">
-                  {project.description}
-                </div>
-                <div className="flex flex-col  mt-2">
-                  
-                  <ul className="flex flex-wrap justify-end pl-8 pb-2">
-                    {project.tags && project.tags.map((tag, index) => (
-                      <li key={index} className="first:ml-0 ml-6 mb-1 font-light tracking-[0.2rem] text-sm">
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                  {(project.repository || project.demoUrl) && (
-                    <ul className="flex flex-row flex-wrap justify-end mt-2">
-                      {project.repository && (
-                        <li className="first:ml-0 ml-6 mb-1 font-light tracking-[0.2rem] text-sm">
-                          <a href={project.repository} target="_blank" rel="noreferrer">
-                            <CodeBracketSquareIcon width={24} height={24} />
-                          </a>
-                        </li>
-                      )}
-                      {project.demoUrl && (
-                        <li className="first:ml-0 ml-6 mb-1 font-light tracking-[0.2rem] text-sm">
-                          <a href={project.repository} target="_blank" rel="noreferrer">
-                            <ArrowTopRightOnSquareIcon width={24} height={24}/>
-                          </a>
-                        </li>
-                      )}
-                    </ul> 
-                  )}
-                </div>
-              </div>
+              <ul className="flex flex-wrap justify-start">
+                {project.tags && project.tags.map((tag, index) => (
+                  <li key={index} className="first:ml-0 ml-6 mb-1">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
-        </Section>
-        <Section title="Projects" className=''>
-          <div className="grid gap-7 grid-cols-3">
-            {projects.length > 0 && projects.map((project, index) => (
-              <div key={project.id} className="flex flex-col p-6 bg-steel-blue-800/90">
-                <h3 className="text-2xl uppercase">
-                  {project.name}
-                </h3>
-                <div className=" text-large">
-                  {project.description}
-                </div>
-                <ul className="flex flex-wrap justify-start">
-                  {project.tags && project.tags.map((tag, index) => (
-                    <li key={index} className="first:ml-0 ml-6 mb-1">
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </Section>
+        </div>
+      </Section> */}
     </main>
   )
 }

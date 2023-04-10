@@ -29,7 +29,7 @@ const FeatureCard: React.FC<Props> = ({ feature, ...props }) => {
                 </div>
                 <div className="my-2" />
                 <div className='text-center'>
-                    <h4 className='text-2xl'>{feature.name}</h4>
+                    <h4 className='text-xl'>{feature.name}</h4>
                     <div className="my-2" />
                     <p className="text-base">
                         {feature.description}

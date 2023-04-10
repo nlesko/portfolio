@@ -7,7 +7,7 @@ const Section =  ({ className, children, title, ...props }: {
     const renderTitle = () => {
         return (
             <div className="w-full flex flex-col items-center justify-center">
-                <h2 className="text-4xl uppercase font-light tracking-[0.7rem]">{title}</h2>
+                <h2 className="text-3xl uppercase font-light tracking-[0.7rem]">{title}</h2>
                 <hr className="w-52 h-[2px] mt-11 mb-16 bg-white rounded-[75%]" style={{border: 'none'}} />
             </div>
         )
