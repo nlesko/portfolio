@@ -25,7 +25,7 @@ const FeatureCard: React.FC<Props> = ({ feature, ...props }) => {
         <div className="w-full md:w-1/2 xl:w-1/4 mb-6 xl:mb-0 px-6">
             <Card className="bg-steel-blue-800/30 px-8 py-12 shadow-md">
                 <div className="flex items-center justify-center h-24">
-                    {feature.icon ? React.createElement(feature.icon, { className: 'w-20 h-20' }) : null }
+                    {feature.icon ? React.createElement(feature.icon, { className: 'w-14 h-14' }) : null }
                 </div>
                 <div className="my-2" />
                 <div className='text-center'>

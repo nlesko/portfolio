@@ -29,9 +29,9 @@ const SkillCard: React.FC<Props> = ({ skill, ...props }) => {
                 row
             >
                 <div className="p-6">                    
-                    {skill.icon ? React.createElement(skill.icon, { className: 'w-12 h-12' }) : null }
+                    {skill.icon ? React.createElement(skill.icon, { className: 'w-8 h-8' }) : null }
                 </div>
-                <CardTitle className="w-full p-6 text-base uppercase text-center">
+                <CardTitle className="w-full p-6 text-sm uppercase text-center">
                     {skill.name}
                 </CardTitle>
             </Card>

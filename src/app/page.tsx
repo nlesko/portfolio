@@ -135,7 +135,26 @@ const projects: Array<Project> = [
 
 export default function Home() {
   return (
+    
     <main>
+       <section className={`w-full h-screen flex flex-col flex-1 py-20 items-center justify-center`}>
+            <div className="container">
+                <div className="flex">
+                    <h1 className="text-2xl font-light tracking-widest">
+                        Hi, my name is
+                        <span className="text-6xl block mt-6 tracking-[10px]">Nikola Leško.</span>
+
+                    </h1>
+                </div>
+                {/* <div className="flex">
+                    <h2 className="text-5xl uppercase font-light tracking-widest">Building stuff for the web</h2>
+                </div> */}
+                <div className="my-7" />
+                <p className="text-2xl">
+                  {`and I'm the person behind the code that makes websites and web apps come to life.`}
+                </p>
+            </div>
+        </section>
       <Section title="">
         <FeatureList />
         {/* <div className="my-20" /> */}
@@ -164,14 +183,11 @@ export default function Home() {
             </p>
             
             <p className="mb-4">
-              {`As a Full-stack Web Developer / Software Engineer, I'm like a builder with a toolbox full of the latest tech and gadgets. Let me show you what I've got - we can use my tools to build something amazing together`}
-              
-              
+              {`As a Full-stack Web Developer / Software Engineer, I'm like a builder with a toolbox full of the latest tech and gadgets. Let me show you what I've got - we can use my tools to build something amazing together.`}
             </p>
             <p className="">
             Explore the technologies and tools I use to bring ideas to life.
             </p>
-          
         </div>
         <div className="my-20" />
         <SkillSetList />
