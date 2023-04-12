@@ -8,43 +8,9 @@ import SkillSetList from '@/components/SkillSetList';
 import Resume from '@/components/Resume';
 import Image from 'next/image';
 import ProjectCard from '@/components/ProjectCard';
+import Banner from '@/containers/Banner';
+import FeatureList from '@/components/FeatureList';
 
-const FeatureList = () => {
-  const features: Array<Feature> = [
-    {
-      id: 1,
-      name: 'Performance',
-      description: 'Optimizing fast on load and lag free interactions',
-      icon: NCloudScaleIcon,
-    },
-    {
-      id: 2,
-      name: 'Responsive',
-      description: 'Mobile-first approach, built for any device',
-      icon: DevicePhoneMobileIcon
-    },
-    {
-      id: 3,
-      name: 'Dynamic',
-      description: 'Alive Web Applications, dynamic content, not plain old static',
-      icon: RocketIcon
-    },
-    {
-      id: 4,
-      name: 'Built With Love',
-      description: 'Most important, build from bottom to top of my heart.',
-      icon: HeartIcon
-    }
-  ]
-
-  return (
-    <div className="flex flex-row flex-wrap items-center">
-      {features.length > 0 && features.map(feature => (
-        <FeatureCard feature={feature} key={feature.id} />
-      ))}
-    </div>
-  );
-};
 const projects: Array<Project> = [
   {
     id: 1,
@@ -135,35 +101,36 @@ const projects: Array<Project> = [
 
 export default function Home() {
   return (
-    
-    <main>
-       <section className={`w-full h-screen flex flex-col flex-1 py-20 items-center justify-center`}>
-            <div className="container">
-                <div className="flex">
-                    <h1 className="text-2xl font-light tracking-widest">
-                        Hi, my name is
-                        <span className="text-6xl block mt-6 tracking-[10px]">Nikola Leško.</span>
 
-                    </h1>
-                </div>
-                {/* <div className="flex">
+    <main>
+      <Banner>
+        <div className="flex flex-col align-center justify-center">
+          <h1 className="text-6xl text-center font-bold tracking-widest">
+            Hi, 
+            <span className="block mt-5 tracking-[0.7rem]">{`I'm Nikola`}</span>
+            <span className="block mt-5 text-4xl">Software Engineer / Full Stack Web Developer.</span>
+            {/* <span className=" block mt-6 tracking-[0.4rem]">Nikola Leško.</span> */}
+
+          </h1>
+          <div className="mt-5" />
+          <p className="text-2xl text-center">
+          {`And I'm the person behind the code that makes websites and web apps come to life.`}
+          </p>
+        </div>
+        {/* <div className="flex">
                     <h2 className="text-5xl uppercase font-light tracking-widest">Building stuff for the web</h2>
                 </div> */}
-                <div className="my-7" />
-                <p className="text-2xl">
-                  {`and I'm the person behind the code that makes websites and web apps come to life.`}
-                </p>
-            </div>
-        </section>
-      <Section title="">
-        <FeatureList />
-        {/* <div className="my-20" /> */}
-        {/* <div className="flex flex-row px-4">
+        
+      </Banner>
+      {/* <Section title=""> */}
+
+      {/* <div className="my-20" /> */}
+      {/* <div className="flex flex-row px-4">
           <div className="w-full py-10">
             <h3 className="text-4xl mb-4">Who am I?</h3>
             <p className="text-xl">
               {`Hi, I'm Nikola Leško, a software engineer with experience in building fast and elegant products for global companies. From marketing websites to enterprise apps, I prioritize performance, scalability, and accessibility to deliver optimized solutions. Let's discuss how I can help your business succeed.`} */}
-        {/* Hi there! My name is Nikola Leško, and I'm a passionate software engineer with a proven track record of building cutting-edge products for companies and businesses worldwide. I specialize in crafting elegant, fast, and accessible user experiences that meet and exceed client expectations.
+      {/* Hi there! My name is Nikola Leško, and I'm a passionate software engineer with a proven track record of building cutting-edge products for companies and businesses worldwide. I specialize in crafting elegant, fast, and accessible user experiences that meet and exceed client expectations.
               <br />
               <br />
               My experience spans across a variety of industries, and I have developed everything from marketing websites to complex enterprise-level applications. With every project, I prioritize performance, scalability, and accessibility to ensure that my solutions are optimized for scale.`}
@@ -172,22 +139,24 @@ export default function Home() {
               {`As a self-motivated individual, I'm comfortable working independently or in a team environment. I'm equipped with a diverse set of tools and technologies, which enables me to deliver fast, resilient solutions that meet business needs.`}
 <br /><br />
               I'm always looking for new challenges and opportunities to learn and grow as a developer. So, if you're interested in discussing a potential collaboration or have any questions, please don't hesitate to reach out. */}
-        {/* </p>
+      {/* </p>
           </div>
         </div> */}
-      </Section>
+      {/* </Section> */}
       <Section title="Me & Toolbox">
+        <FeatureList />
+        <div className='my-20' />
         <div className="flex flex-col px-4">
-            <p className="mb-4">
-              {`Hi, I'm Nikola Leško, a software engineer with experience in building fast and elegant products for global companies. From marketing websites to enterprise apps, I prioritize performance, scalability, and accessibility to deliver optimized solutions. Let's discuss how I can help your business succeed.`}
-            </p>
-            
-            <p className="mb-4">
-              {`As a Full-stack Web Developer / Software Engineer, I'm like a builder with a toolbox full of the latest tech and gadgets. Let me show you what I've got - we can use my tools to build something amazing together.`}
-            </p>
-            <p className="">
+          <p className="mb-4">
+            {`Hi, I'm Nikola Leško, a software engineer with experience in building fast and elegant products for global companies. From marketing websites to enterprise apps, I prioritize performance, scalability, and accessibility to deliver optimized solutions. Let's discuss how I can help your business succeed.`}
+          </p>
+
+          <p className="mb-4">
+            {`As a Full-stack Web Developer / Software Engineer, I'm like a builder with a toolbox full of the latest tech and gadgets. Let me show you what I've got - we can use my tools to build something amazing together.`}
+          </p>
+          <p className="">
             Explore the technologies and tools I use to bring ideas to life.
-            </p>
+          </p>
         </div>
         <div className="my-20" />
         <SkillSetList />
