@@ -105,15 +105,15 @@ export default function Home() {
     <main>
       <Banner>
         <div className="flex flex-col align-center justify-center">
-          <h1 className="text-6xl text-center font-bold tracking-widest">
+          <h1 className="text-2xl md:text-6xl text-center font-bold">
             Hi, 
-            <span className="block mt-5 tracking-[0.7rem]">{`I'm Nikola`}</span>
-            <span className="block mt-5 text-4xl">Software Engineer / Full Stack Web Developer.</span>
+            <span className="block mt-3 md:mt-5 tracking-[0.35rem] md:tracking-[0.7rem]">{`I'm Nikola`}</span>
+            <span className="block mt-3 md:mt-5 text-2xl md:text-4xl">Software Engineer / Full Stack Web Developer.</span>
             {/* <span className=" block mt-6 tracking-[0.4rem]">Nikola Leško.</span> */}
 
           </h1>
           <div className="mt-5" />
-          <p className="text-2xl text-center">
+          <p className="text-base md:text-2xl text-center">
           {`And I'm the person behind the code that makes websites and web apps come to life.`}
           </p>
         </div>
