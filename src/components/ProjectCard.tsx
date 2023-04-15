@@ -1,7 +1,11 @@
+"use client";
 import { ArrowTopRightOnSquareIcon, CodeBracketSquareIcon } from '@heroicons/react/20/solid';
 
 import { Project } from "@/types"
 import Image from "next/image"
+import { Variants, motion } from 'framer-motion';
+
+
 
 const ProjectCard = ({
     project,
@@ -10,21 +14,87 @@ const ProjectCard = ({
     project: Project
     reverse?: boolean
 }) => {
+  const introProjectImageVariants: Variants = {
+    hide: {
+        opacity: 0,
+        x: reverse ? 300 : -300,
+    },
+    show: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.4,
+            function: 'ease',
+        },
+    },    
+  };
+  const introProjectDescVariants: Variants = {
+    hide: {
+        opacity: 0,
+        x: reverse ? -300 : 300,
+    },
+    show: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.4,
+            function: 'ease',
+        },
+    },    
+  };
+  const introProjectTitleLinksVariants: Variants = {
+    hide: {
+        opacity: 0,
+        y: 50,
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.4,
+            function: 'ease',
+        },
+    },    
+  };
+
     return (
         <div className={`flex ${reverse ? 'flex-row-reverse' : 'flex-row'} mb-20 relative`}>
-              <div className="w-1/2 relative z-10 max-w-[560px] h-[315px]">
+              <motion.div className="w-1/2 relative z-10 max-w-[560px] h-[315px]"
+                initial="hide"
+                whileInView="show"
+                viewport={{ once: true}}
+                // exit="hide"
+                variants={introProjectImageVariants}
+              >
                 <Image src={'/cryptocurrency-tracker.jpg'} alt={project.name} fill/>
-              </div>
+              </motion.div>
               <div className="w-1/2 flex flex-col justify-between relative z-20">
-                <h3 className={`text-xl uppercase tracking-[0.2rem] ${reverse ? 'pr-7' : 'pl-8'} pt-2`}>
+                <motion.h3 className={`text-xl uppercase tracking-[0.2rem] ${reverse ? 'pr-7' : 'pl-8'} pt-2`}
+                  initial="hide"
+                  whileInView="show"
+                  viewport={{ once: true}}
+                  // exit="hide"
+                  variants={introProjectTitleLinksVariants}
+                >
                   {project.name}
-                </h3>
+                </motion.h3>
                 
-                <div className={`bg-steel-blue-800/90 ${reverse ? '-mr-20' : '-ml-20'}  text-base p-8`}>
+                <motion.div className={`bg-steel-blue-800/90 ${reverse ? '-mr-20' : '-ml-20'}  text-base p-8`}
+                  initial="hide"
+                  whileInView="show"
+                  viewport={{ once: true}}
+                  // exit="hide"
+                  variants={introProjectDescVariants}
+                >
                   {project.description}
-                </div>
-                <div className="flex flex-col  mt-2">
-                  
+                </motion.div>
+                <motion.div className="flex flex-col  mt-2"
+                   initial="hide"
+                   whileInView="show"
+                   viewport={{ once: true}}
+                   // exit="hide"
+                   variants={introProjectTitleLinksVariants}
+                >                  
                   <ul className={`flex flex-wrap ${reverse ? 'justify-start pr-8' : 'justify-end pl-8'}  pb-2`}>
                     {project.tags && project.tags.map((tag, index) => (
                       <li key={index} className="first:ml-0 ml-6 mb-1 font-light tracking-[0.2rem] text-xs">
@@ -50,7 +120,7 @@ const ProjectCard = ({
                       )}
                     </ul> 
                   )}
-                </div>
+                </motion.div>
               </div>
             </div>
     )

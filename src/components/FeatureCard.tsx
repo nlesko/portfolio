@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import type { Feature } from '../types';
 import { Card, CardTitle } from './ui';
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 
 /**
  * Creates skill card element.
@@ -19,11 +20,30 @@ interface Props {
     children?: React.ReactNode,
 }
 
+const introFeatureCardVariants: Variants = {
+    hide: {
+        transform: 'perspective(2500px) rotateX(-100deg)'
+    },
+    show: {
+        transform: 'perspective(2500px) rotateX(0deg)',
+        transition: {
+            duration: 0.4,
+            function: 'ease',
+        },
+    },
+    
+};
 
 const FeatureCard: React.FC<Props> = ({ feature, ...props }) => {
     return (
 
-        <motion.div className="w-full md:w-1/2 xl:w-1/4 mb-6 xl:mb-0 px-6">
+        <motion.div className="w-full md:w-1/2 xl:w-1/4 mb-6 xl:mb-0 px-6"
+        initial="hide"
+        whileInView="show"
+        viewport={{ once: true}}
+        // exit="hide"
+        variants={introFeatureCardVariants}
+        >
             <Card className="bg-steel-blue-800/30 px-8 py-12 shadow-md">
                 <div className="flex items-center justify-center h-24">
                     {feature.icon ? React.createElement(feature.icon, { className: 'w-14 h-14' }) : null }

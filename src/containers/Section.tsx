@@ -11,7 +11,8 @@ const introHeaderVariants: Variants = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 1,
+            duration: 0.4,
+            function: 'ease',
         },
     },
 };

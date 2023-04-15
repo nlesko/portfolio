@@ -6,14 +6,14 @@ import { ReactNode } from "react";
 const introTitleVariants: Variants = {
     hide: {
         opacity: 0,
-        x: -300,
+        y: 300,
     },
     show: {
         opacity: 1,
-        x: 0,
-        
+        y: 0,        
         transition: {
-            duration: 1,
+            duration: 0.4,
+            function: 'ease',
         },
     },
 };
