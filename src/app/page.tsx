@@ -3,7 +3,7 @@ import Section from "@/containers/Section";
 import FeatureCard from "@/components/FeatureCard";
 import type { Feature, Project } from "@/types";
 import { NCloudScaleIcon, RocketIcon } from '@/components/icons';
-import { ProjectCategory } from '@/enums';
+import { ListStyle, ProjectCategory } from '@/enums';
 import SkillSetList from '@/components/SkillSetList';
 import Resume from '@/components/Resume';
 import Image from 'next/image';
@@ -146,20 +146,23 @@ export default function Home() {
       <Section title="Me & Toolbox">
         <FeatureList />
         <div className='my-20' />
-        <div className="flex flex-col px-4">
-          <p className="mb-4">
-            {`Hi, I'm Nikola Leško, a software engineer with experience in building fast and elegant products for global companies. From marketing websites to enterprise apps, I prioritize performance, scalability, and accessibility to deliver optimized solutions. Let's discuss how I can help your business succeed.`}
-          </p>
+        <div className="flex flex-row">
+          <div className="w-full md:w-1/2 flex flex-col px-4">
+            <p className="mb-4">
+              {`Hi, I'm Nikola Leško, a software engineer with experience in building fast and elegant products for global companies. From marketing websites to enterprise apps, I prioritize performance, scalability, and accessibility to deliver optimized solutions. Let's discuss how I can help your business succeed.`}
+            </p>
 
-          <p className="mb-4">
-            {`As a Full-stack Web Developer / Software Engineer, I'm like a builder with a toolbox full of the latest tech and gadgets. Let me show you what I've got - we can use my tools to build something amazing together.`}
-          </p>
-          <p className="">
-            Explore the technologies and tools I use to bring ideas to life.
-          </p>
+            <p className="mb-4">
+              {`As a Full-stack Web Developer / Software Engineer, I'm like a builder with a toolbox full of the latest tech and gadgets. Let me show you what I've got - we can use my tools to build something amazing together.`}
+            </p>
+            <p className="">
+              Explore the technologies and tools I use to bring ideas to life.
+            </p>
+          </div>
+          <div className="w-full md:w-1/2 flex flex-col px-4">
+            <SkillSetList listStyle={ListStyle.TAG} />
+          </div>
         </div>
-        <div className="my-20" />
-        <SkillSetList />
       </Section>
       {/* <Section title="My Journey So Far">
         <div className="w-full p-10">

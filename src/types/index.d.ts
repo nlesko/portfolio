@@ -6,6 +6,7 @@ export type Skill = {
     name: string;
     icon: IconType;
     category: SkillCategory;
+    isFeatured: boolean;
 }
 
 export type IconTypeProps = {

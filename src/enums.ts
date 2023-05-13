@@ -8,3 +8,10 @@ export enum ProjectCategory {
     PERSONAL = 1,
     PROFESSIONAL = 2,
 }
+
+export enum ListStyle {
+    GRID = 1,
+    LIST = 2,
+    TAG = 3,
+    CARD = 4,
+}
