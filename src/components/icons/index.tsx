@@ -26,3 +26,5 @@ export {default as AxiosIcon } from './AxiosIcon';
 export {default as NCloudScaleIcon} from './NCloudScaleIcon';
 export {default as RocketIcon} from './RocketIcon';
 export {default as DockerIcon} from './DockerIcon';
+export {default as LinkedInIcon} from './LinkedInIcon';
+export {default as GitHubSimpleIcon} from './GitHubSimpleIcon';

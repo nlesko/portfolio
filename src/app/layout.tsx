@@ -1,3 +1,4 @@
+import Footer from '@/containers/Footer'
 import './globals.css'
 
 export const metadata = {
@@ -14,15 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}      
-        <footer className="w-full py-20">
-          <div className="container mx-auto px-4">
-          <p>Web development for unique ideas</p>
-          <p>
-          © {new Date().getFullYear()} Nikola Leško
-            
-          </p>
-          </div>
-        </footer>
+        <Footer />
       </body>      
     </html>
   )

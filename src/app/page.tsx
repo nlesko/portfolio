@@ -106,7 +106,7 @@ export default function Home() {
       <Banner>
         <div className="flex flex-col align-center justify-center">
           <h1 className="text-2xl md:text-6xl text-center font-bold">
-            Hi, 
+          <span className="block mt-3 md:mt-5 tracking-[0.35rem] md:tracking-[0.7rem]">Hi,</span>
             <span className="block mt-3 md:mt-5 tracking-[0.35rem] md:tracking-[0.7rem]">{`I'm Nikola`}</span>
             <span className="block mt-3 md:mt-5 text-2xl md:text-4xl">Software Engineer / Full Stack Web Developer.</span>
             {/* <span className=" block mt-6 tracking-[0.4rem]">Nikola Leško.</span> */}
@@ -171,6 +171,13 @@ export default function Home() {
           {projects.length > 0 && projects.map((project, index) => (
             <ProjectCard key={project.id} reverse={index % 2 === 0} project={project} />
           ))}
+        </div>
+      </Section>
+      <Section title="Contact">
+      <div className="flex flex-col px-4">
+          <p className="text-base text-center">
+            {`Ready to take your website or web app to the next level? Let's work together! Drop me a line and let's chat about your vision and how I can help make it a reality.`}
+          </p>
         </div>
       </Section>
       {/* <Section title="Projects" className=''>
