@@ -148,18 +148,24 @@ export default function Home() {
         <div className='my-20' />
         <div className="flex flex-row">
           <div className="w-full md:w-1/2 flex flex-col px-4">
-            <p className="mb-4">
+          <h3 className="text-xl text-center mb-6 uppercase tracking-[0.2rem] pr-7 pt-2">
+                {`The Person Behind the Code`}
+              </h3>
+            <p className="mb-4 text-base">
               {`Hi, I'm Nikola Leško, a software engineer with experience in building fast and elegant products for global companies. From marketing websites to enterprise apps, I prioritize performance, scalability, and accessibility to deliver optimized solutions. Let's discuss how I can help your business succeed.`}
             </p>
 
-            <p className="mb-4">
+            <p className="mb-4 text-base">
               {`As a Full-stack Web Developer / Software Engineer, I'm like a builder with a toolbox full of the latest tech and gadgets. Let me show you what I've got - we can use my tools to build something amazing together.`}
             </p>
-            <p className="">
+            <p className="text-base">
               Explore the technologies and tools I use to bring ideas to life.
             </p>
           </div>
           <div className="w-full md:w-1/2 flex flex-col px-4">
+              <h3 className="text-xl text-center mb-6 uppercase tracking-[0.2rem] pr-7 pt-2">
+                {`Recent Toolset`}
+              </h3>
             <SkillSetList listStyle={ListStyle.TAG} />
           </div>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { ListStyle, SkillCategory } from "@/enums";
-import { AdobePhotoshopIcon, BootstrapIcon, DockerIcon, ExpressJsIcon, GitIcon, JavaScriptIcon, MicrosoftSqlServerIcon, MongoDbIcon, NodeJsIcon, PostgreSqlIcon, PrestaShopIcon, ReactJsIcon, TailwindIcon, TypeScriptIcon, VueJsIcon } from "./icons";
+import { AdobePhotoshopIcon, BootstrapIcon, DockerIcon, DotNetIcon, ExpressJsIcon, GitIcon, JavaScriptIcon, MicrosoftSqlServerIcon, MongoDbIcon, NodeJsIcon, PostgreSqlIcon, PrestaShopIcon, ReactJsIcon, TailwindIcon, TypeScriptIcon, VueJsIcon } from "./icons";
 import { Skill } from "@/types";
 import SkillCard from "./SkillCard";
 import React from "react";
@@ -48,7 +48,8 @@ const SkillSetList = ({ listStyle = ListStyle.CARD }: { listStyle?: ListStyle}) 
         id: 6,
         name: 'Bootstrap',
         icon: BootstrapIcon,
-        category: SkillCategory.FRONTEND
+        category: SkillCategory.FRONTEND,
+        isFeatured: false
       },
       {
         id: 7,
@@ -107,6 +108,13 @@ const SkillSetList = ({ listStyle = ListStyle.CARD }: { listStyle?: ListStyle}) 
         isFeatured: false
       },
       {
+        id: 15,
+        name: ".NET Core",
+        icon: DotNetIcon,
+        category: SkillCategory.BACKEND,
+        isFeatured: true,
+      },
+      {
         id: 16,
         name: "Docker",
         icon: DockerIcon,
@@ -135,7 +143,7 @@ const SkillSetList = ({ listStyle = ListStyle.CARD }: { listStyle?: ListStyle}) 
     }
 
     return (
-      <div className={`flex flex-wrap ${listStyle === ListStyle.TAG ? 'gap-2' : ''}`}>
+      <div className={`flex flex-wrap ${listStyle === ListStyle.TAG ? 'gap-3' : ''}`}>
         {skillSets.length > 0 && skillSets.map((skill, index) => {
             if(skill.isFeatured) {
               return (

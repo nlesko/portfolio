@@ -4,6 +4,7 @@ import { ArrowTopRightOnSquareIcon, CodeBracketSquareIcon } from '@heroicons/rea
 import { Project } from "@/types"
 import Image from "next/image"
 import { Variants, motion } from 'framer-motion';
+import Tag from './Tag';
 
 
 
@@ -95,13 +96,16 @@ const ProjectCard = ({
                    // exit="hide"
                    variants={introProjectTitleLinksVariants}
                 >                  
-                  <ul className={`flex flex-wrap ${reverse ? 'justify-start pr-8' : 'justify-end pl-8'}  pb-2`}>
+                  <div className={`flex flex-wrap gap-3 ${reverse ? 'justify-start pr-8' : 'justify-end pl-8'}  pb-2`}>
                     {project.tags && project.tags.map((tag, index) => (
-                      <li key={index} className="first:ml-0 ml-6 mb-1 font-light tracking-[0.2rem] text-xs">
+                      <Tag textSize='sm' key={index}>
                         {tag}
-                      </li>
+                      </Tag>
+                      // <li key={index} className="first:ml-0 ml-6 mb-1 font-light tracking-[0.2rem] text-xs">
+                      //   {tag}
+                      // </li>
                     ))}
-                  </ul>
+                  </div>
                   {(project.repository || project.demoUrl) && (
                     <ul className={`flex flex-row flex-wrap ${reverse ? 'justify-start pr-8' : 'justify-end pl-8'} mt-2`}>
                       {project.repository && (
