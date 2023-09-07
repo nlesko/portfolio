@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon';
+const socilaLinks = [
+    {
+        id: 1,
+        name: "LinkedIn",
+        href: "https://www.linkedin.com/in/nikola-lesko",
+        icon: "LinkedIn",
+        iconClass: "h-6 w-6 pl-[0.2rem]"
+    },
+    {
+        id: 2,
+        name: "GitHub",
+        href: "https://github.com/nlesko",
+        icon: "GitHub",
+    }
+]
+---
+<footer class="w-full pt-40 pb-20">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+          <p class="text-2xl">
+              Bringing ideas to life, one line of code at a time.
+          </p>
+          <div class="my-7" />
+          <ul class="flex flex-row gap-5">
+              {socilaLinks.map((link) => (
+              <li key={link.id} class="flex items-center">
+                  <a href={link.href} target="_blank  " class="flex items-center justify-center w-12 h-12 rounded-full border-2 border-slate-500 hover:bg-white hover:border-white hover:text-black transition-all duration-300">
+                      <Icon name={link.icon} class={`h-5 w-5 ${link.iconClass}`} />
+                  </a>
+              </li>
+              ))}                    
+          </ul>
+          <div class="my-7" />
+          <p class="">
+          Web development for unique and innovative projects.
+          </p>
+          <div class="my-1" />
+          <p class="text-xs">
+              © {new Date().getFullYear()} Nikola Leško
+          </p>
+      </div>
+    </div>
+  </footer>

@@ -1,0 +1,76 @@
+---
+import Footer from "../containers/Footer.astro";
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+<style is:global>
+	@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap");
+	@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	html,
+	body {
+		padding: 0;
+		margin: 0;
+		font-family: "Roboto", sans-serif;
+		font-weight: 300;
+		font-size: 16px;
+		overflow-x: hidden;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: "Raleway", sans-serif;
+		font-weight: 400;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		@apply bg-steel-blue-900;
+		@apply text-white;
+	}
+
+	.list-[square] li {
+		position: relative;
+	}
+</style>
