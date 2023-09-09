@@ -1,0 +1,15 @@
+---
+// import { Feature } from './Feature.d.ts';
+import FeatureCard from './FeatureCard.astro';
+interface Props {
+	features: Array<Feature>;
+}
+
+const { features } = Astro.props;
+---
+
+<div class="flex flex-row flex-wrap items-center">
+    {features?.length > 0 && features.map(feature => (
+        <FeatureCard feature={feature} key={feature.id} />
+    ))}
+</div>

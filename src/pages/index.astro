@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Section from '../containers/Section.astro';
 import Card from '../components/Card.astro';
+import FeatureList from '../features/features/FeatureList.astro';
+import { features } from '../data';
 ---
 
 <Layout title="Nikola Leško | Web developer">
@@ -23,6 +25,6 @@ import Card from '../components/Card.astro';
 		</div>
 	</section>
 	<Section title="Me & Toolbox">
-
+		<FeatureList features={features} />
 	</Section>
 </Layout>

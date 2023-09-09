@@ -25,7 +25,7 @@ const socilaLinks = [
           <div class="my-7" />
           <ul class="flex flex-row gap-5">
               {socilaLinks.map((link) => (
-              <li key={link.id} class="flex items-center">
+              <li class="flex items-center">
                   <a href={link.href} target="_blank  " class="flex items-center justify-center w-12 h-12 rounded-full border-2 border-slate-500 hover:bg-white hover:border-white hover:text-black transition-all duration-300">
                       <Icon name={link.icon} class={`h-5 w-5 ${link.iconClass}`} />
                   </a>
