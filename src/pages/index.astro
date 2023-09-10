@@ -3,7 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Section from '../containers/Section.astro';
 import Card from '../components/Card.astro';
 import FeatureList from '../features/features/FeatureList.astro';
-import { features } from '../data';
+import ToolsList from '../features/tools/ToolsList.astro';
+import { features, tools } from '../data';
+import { ListStyle } from '../env.d';
 ---
 
 <Layout title="Nikola Leško | Web developer">
@@ -26,5 +28,29 @@ import { features } from '../data';
 	</section>
 	<Section title="Me & Toolbox">
 		<FeatureList features={features} />
+		<div class='my-20' />
+		<div class="flex flex-row">
+			<div class="w-full md:w-1/2 flex flex-col px-4">
+			<h3 class="text-xl text-center mb-6 uppercase tracking-[0.2rem] pr-7 pt-2">
+				  {`The Person Behind the Code`}
+				</h3>
+			  <p class="mb-4 text-base">
+				{`Hi, I'm Nikola Leško, a software engineer with experience in building fast and elegant products for global companies. From marketing websites to enterprise apps, I prioritize performance, scalability, and accessibility to deliver optimized solutions. Let's discuss how I can help your business succeed.`}
+			  </p>
+  
+			  <p class="mb-4 text-base">
+				{`As a Full-stack Web Developer / Software Engineer, I'm like a builder with a toolbox full of the latest tech and gadgets. Let me show you what I've got - we can use my tools to build something amazing together.`}
+			  </p>
+			  <p class="text-base">
+				Explore the technologies and tools I use to bring ideas to life.
+			  </p>
+			</div>
+			<div class="w-full md:w-1/2 flex flex-col px-4">
+				<h3 class="text-xl text-center mb-6 uppercase tracking-[0.2rem] pr-7 pt-2">
+				  {`Recent Toolset`}
+				</h3>
+			  <ToolsList tools={tools} listStyle={ListStyle.TAG} />
+			</div>
+		  </div>
 	</Section>
 </Layout>

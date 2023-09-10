@@ -1,0 +1,24 @@
+---
+import { ListStyle } from '../../env';
+import { ListStyle } from '../../env';
+import { ListStyle } from '../../env.d';
+import Tag from '../../components/Tag.astro';
+interface Props {
+	tools: Array<Tool>;
+    listStyle?: ListStyle;
+}
+const { tools, listStyle } = Astro.props;
+---
+<div class={`flex flex-wrap ${listStyle === ListStyle.TAG ? 'gap-3' : ''}`}>
+{tools?.length > 0 && tools.map((tool, index) => {
+    if(tool.isFeatured) {
+        return (
+        <Tag textSize="sm">
+            {tool.name}
+        </Tag>
+        )          
+    }
+    return null;
+    })
+}
+</div>

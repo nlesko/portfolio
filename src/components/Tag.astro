@@ -1,0 +1,14 @@
+---
+interface Props {
+    color?: string,
+    textSize?: string,
+    textColor?: string,
+    bgAlpha?: string,
+}
+const { color = 'steel-blue', textSize = 'xs', textColor = 'white', bgAlpha = '90' } = Astro.props;
+---
+<div
+      class={`inline-block rounded-full py-2 px-3 bg-${color}-800/${bgAlpha} text-${textColor} text-${textSize} font-light tracking-[0.2rem]`}
+    >
+    <slot />
+</div>
