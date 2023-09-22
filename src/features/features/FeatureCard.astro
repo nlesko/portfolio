@@ -9,7 +9,7 @@ interface Props {
 const { feature } = Astro.props;
 ---
 
-<div class="w-full md:w-1/2 xl:w-1/4 mb-6 xl:mb-0 px-6">
+<div class="w-full md:w-1/2 xl:w-1/4 mb-6 xl:mb-0 px-6" data-aos="flip-up" data-aos-duration="1000">
     <Card className="bg-steel-blue-800/30 px-8 py-12 shadow-md">
         <div class="flex items-center justify-center">
             {feature.icon ? feature.pack ? <Icon pack={feature.pack} name={feature.icon} class="w-7 h-7" /> : <Icon name={feature.icon} class="w-7 h-7" />  : null }
