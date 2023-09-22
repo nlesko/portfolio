@@ -12,6 +12,11 @@ export enum ToolCategory {
     OTHER=3
 }
 
+export enum ProjectCategory {
+    PERSONAL = 1,
+    PROFESSIONAL = 2,
+}
+
 export type Tool = {
     id: number;
     name: string;
@@ -25,4 +30,16 @@ export type Feature = {
     description: string;
     icon: IconType | any;
     pack?: string;
+}
+
+
+export type Project = {
+    id: number;
+    name: string;
+    description: string;
+    imageUrl: string;
+    repository?: string | undefined;
+    demoUrl?: string | undefined;
+    tags: string[];
+    projectCategory: ProjectCategory;
 }

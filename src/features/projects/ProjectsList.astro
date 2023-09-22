@@ -1,0 +1,13 @@
+---
+import ProjectCard from './ProjectCard.astro';
+interface Props {
+	projects: Array<Project>;
+}
+const { projects } = Astro.props;
+---
+
+<div className="w-full p-10">
+    {projects.map((project, index) => (
+        <ProjectCard project={project} reverse={index % 2 === 0} />
+    ))
+</div>

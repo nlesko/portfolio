@@ -1,8 +1,6 @@
 ---
-import { ListStyle } from '../../env';
-import { ListStyle } from '../../env';
-import { ListStyle } from '../../env.d';
 import Tag from '../../components/Tag.astro';
+import { ListStyle, type Tool } from '../../env.d';
 interface Props {
 	tools: Array<Tool>;
     listStyle?: ListStyle;
@@ -13,7 +11,7 @@ const { tools, listStyle } = Astro.props;
 {tools?.length > 0 && tools.map((tool, index) => {
     if(tool.isFeatured) {
         return (
-        <Tag textSize="sm">
+        <Tag textSize="text-sm">
             {tool.name}
         </Tag>
         )          

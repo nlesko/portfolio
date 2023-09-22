@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon';
+import Tag from '../../components/Tag.astro'
+interface Props {
+	project: Project;
+    reverse: boolean
+}
+const { project, reverse = false } = Astro.props;
+console.log('project', project)
+---
+
+<div class={`flex ${reverse ? 'flex-row-reverse' : 'flex-row'} mb-20 relative`}>
+    <div class="w-1/2 relative z-10 max-w-[560px] h-[315px]"
+    >
+      <Image src={project.imageUrl} alt={project.name} />
+    </div>
+    <div class="w-1/2 flex flex-col justify-between relative z-20">
+      <h3 class={`text-xl uppercase tracking-[0.2rem] ${reverse ? 'pr-7' : 'pl-8'} pt-2`}>
+        {project.name}
+      </h3>
+      
+      <div class={`bg-steel-blue-800/90 ${reverse ? '-mr-20' : '-ml-20'}  text-base p-8`}>
+        {project.description}
+      </div>
+      <div class="flex flex-col  mt-2">
+        <div class={`flex flex-wrap gap-3 ${reverse ? 'justify-start pr-8' : 'justify-end pl-8'}  pb-2`}>
+          {project.tags && project.tags.map((tag, index) => (
+            <Tag textSize='text-sm'>
+              {tag}
+            </Tag>
+          ))}
+        </div>
+        {(project.repository || project.demoUrl) && (
+          <ul class={`flex flex-row flex-wrap ${reverse ? 'justify-start pr-8' : 'justify-end pl-8'} mt-2`}>
+            {project.repository && (
+              <li class="first:ml-0 ml-6 mb-1 font-light tracking-[0.2rem] text-sm">
+                <a href={project.repository} target="_blank" rel="noreferrer">
+                  <Icon name="CodeBracketSquare"  class="w-7 h-7" />
+                </a>
+              </li>
+            )}
+            {project.demoUrl && (
+              <li class="first:ml-0 ml-6 mb-1 font-light tracking-[0.2rem] text-sm">
+                <a href={project.demoUrl} target="_blank" rel="noreferrer">
+                   <Icon name="ArrowTopRightOnSquare" class="w-6 h-6" />
+                </a>
+              </li>
+            )}
+          </ul> 
+        )}
+      </div>
+    </div>
+  </div>

@@ -4,7 +4,8 @@ import Section from '../containers/Section.astro';
 import Card from '../components/Card.astro';
 import FeatureList from '../features/features/FeatureList.astro';
 import ToolsList from '../features/tools/ToolsList.astro';
-import { features, tools } from '../data';
+import ProjectsList from '../features/projects/ProjectsList.astro';
+import { features, tools, projects } from '../data';
 import { ListStyle } from '../env.d';
 ---
 
@@ -52,5 +53,8 @@ import { ListStyle } from '../env.d';
 			  <ToolsList tools={tools} listStyle={ListStyle.TAG} />
 			</div>
 		  </div>
+	</Section>
+	<Section title="Projects">
+		<ProjectsList projects={projects} />
 	</Section>
 </Layout>
