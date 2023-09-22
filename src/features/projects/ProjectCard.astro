@@ -9,13 +9,13 @@ interface Props {
 const { project, reverse = false } = Astro.props;
 ---
 
-<div class={`flex ${reverse ? 'flex-row-reverse' : 'flex-row'} mb-20 relative`}>
-    <div class="w-1/2 relative z-10 max-w-[560px] h-[315px]"
+<div class={`flex ${reverse ? 'flex-row-reverse' : 'flex-row'} mb-20 relative flex-wrap`}>
+    <div class="w-full md:w-1/2 relative z-10 max-w-[560px] max-h-[315px]"
     data-aos={reverse ? "slide-left" : "slide-right"} data-aos-duration="1000"
     >
       <Image src={project.imageUrl} alt={project.name} />
     </div>
-    <div class="w-1/2 flex flex-col justify-between relative z-20">
+    <div class="w-full md:w-1/2 flex flex-col justify-between relative z-20">
       <h3 class={`text-xl uppercase tracking-[0.2rem] ${reverse ? 'pr-7' : 'pl-8'} pt-2`} data-aos="fade-down" data-aos-duration="1000">
         {project.name}
       </h3>
