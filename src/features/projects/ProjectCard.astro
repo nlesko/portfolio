@@ -7,7 +7,6 @@ interface Props {
     reverse: boolean
 }
 const { project, reverse = false } = Astro.props;
-console.log('project', project)
 ---
 
 <div class={`flex ${reverse ? 'flex-row-reverse' : 'flex-row'} mb-20 relative`}>
