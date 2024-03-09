@@ -1,7 +1,7 @@
 import { transformSlots } from 'astro/jsx-runtime';
 import type { Feature } from './features/features/Features';
 import type { Tool } from './features/tools/Tools';
-import { ProjectCategory, ToolCategory } from './env.d';
+import { ProjectCategory, ToolCategory, type Project } from './env.d';
 import cryptoCurrencyTrackerImage from './assets/images/projects/cryptocurrency-tracker.jpg';
 export const features: Array<Feature> = [
     {
@@ -147,15 +147,6 @@ export const tools: Array<Tool> = [
 
   export const projects: Array<Project> = [
     {
-      id: 1,
-      name: "Mountain Climber",
-      description: "Landing page for Travel Agency. Built with CSS Flexbox",
-      imageUrl: cryptoCurrencyTrackerImage,
-      demoUrl: "http://nytprojects.dx.am/mountain/",
-      tags: ['React', 'Node', 'CSS'],
-      projectCategory: ProjectCategory.PERSONAL
-    },
-    {
       id: 2,
       name: "Guess the Color Game",
       description: "Simple Guess the Color Game made with JavaScript. The Game asks you to guess colour of RGB value shown in header.",
@@ -165,16 +156,16 @@ export const tools: Array<Tool> = [
       tags: ['React', 'Node', 'CSS'],
       projectCategory: ProjectCategory.PERSONAL
     },
-    {
-      id: 3,
-      name: "Christmas Countdown Clock",
-      description: "In the mood for holidays decided to put together this simple Christmas countdown clock It contains countdown timer that is counting how much time is left till December 25, 00:00:01 in the night. Besides timer added simple snow-like background using canvas. Also what kind of Christmas it would be without some Christmas lights? :)",
-      imageUrl: cryptoCurrencyTrackerImage,
-      repository: "https://github.com/nlesko/christmas-countdown-clock",
-      demoUrl: "https://nlesko.github.io/projects/christmas-countdown-clock/",
-      tags: ['React', 'Node', 'CSS'],
-      projectCategory: ProjectCategory.PERSONAL
-    },
+    // {
+    //   id: 3,
+    //   name: "Christmas Countdown Clock",
+    //   description: "In the mood for holidays decided to put together this simple Christmas countdown clock It contains countdown timer that is counting how much time is left till December 25, 00:00:01 in the night. Besides timer added simple snow-like background using canvas. Also what kind of Christmas it would be without some Christmas lights? :)",
+    //   imageUrl: cryptoCurrencyTrackerImage,
+    //   repository: "https://github.com/nlesko/christmas-countdown-clock",
+    //   demoUrl: "https://nlesko.github.io/projects/christmas-countdown-clock/",
+    //   tags: ['React', 'Node', 'CSS'],
+    //   projectCategory: ProjectCategory.PERSONAL
+    // },
     {
       id: 4,
       name: "Cryptocurrency Tracker",
@@ -201,7 +192,7 @@ export const tools: Array<Tool> = [
       imageUrl: cryptoCurrencyTrackerImage,
       repository: "https://github.com/nlesko/build-a-bot",
       demoUrl: "https://dry-taiga-74990.herokuapp.com/build",
-      tags: ['React', 'Node', 'CSS'],
+      tags: ['Vue', 'Vuex'],
       projectCategory: ProjectCategory.PERSONAL
     },
     {
