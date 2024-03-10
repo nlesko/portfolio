@@ -9,8 +9,29 @@ import { features, tools, projects } from '../data';
 import { ListStyle } from '../env.d';
 ---
 
+<style>
+	#stripes{
+	width:100%;
+	height: 100%;
+	overflow: hidden;
+	transform-origin: 0;
+	transform: skewY(-15deg);
+	background: -webkit-linear-gradient(300deg,#071217 15%,#143242 70%,#21526c 94%);
+	background: linear-gradient(150deg,#071217 15%,#143242 70%,#21526c 94%);
+}
+
+#stripes, #stripes span{
+  position: absolute;
+  z-index: -1;
+}
+
+</style>
+
 <Layout title="Nikola Leško | Web developer">
-	<section class="w-full h-screen flex flex-col flex-1 py-20 items-center justify-center">
+	<section  class="w-full h-screen flex flex-col flex-1 py-20 items-center justify-center">
+		<div id="stripes">
+		
+		</div>
 		<div class="container px-4">
 			<div class="flex flex-col align-center justify-center" data-aos="fade-up" data-aos-duration="1000">
 				<h1 class="text-2xl md:text-6xl text-center font-bold">
