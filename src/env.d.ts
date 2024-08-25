@@ -38,7 +38,7 @@ export type Project = {
     id: number;
     name: string;
     description: string;
-    imageUrl: string;
+    imageUrl: string | ImageMetadata;
     repository?: string | undefined;
     demoUrl?: string | undefined;
     tags: string[];
