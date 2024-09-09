@@ -8,6 +8,8 @@ import guessTheColorGameImage from './assets/images/projects/guess-the-color-gam
 import dmt1Image from './assets/images/projects/dm_t1.jpg';
 import ljevakImage from './assets/images/projects/ljevak_hr.jpg';
 import begamontImage from './assets/images/projects/begamont.jpg';
+import hangmanGameImage from './assets/images/projects/hangman-game.jpg';
+
 export const features: Array<Feature> = [
     {
         id: 1,
@@ -66,7 +68,7 @@ export const tools: Array<Tool> = [
     },
     {
       id: 5,
-      name: 'Tailwind',
+      name: 'Tailwind CSS',
       icon: "Tailwind",
       category: ToolCategory.FRONTEND,
       isFeatured: true
@@ -202,29 +204,39 @@ export const tools: Array<Tool> = [
     },
     {
       id: 7,
+      name: "Hangman",
+      description: "A simple Hangman game made with React. The game asks you to guess the word by selecting letters from the alphabet. The game features a hint button that reveals a letter in the word.",
+      imageUrl: hangmanGameImage,
+      repository: "https://github.com/nlesko/hangman-game",
+      demoUrl: "https://nlesko.github.io/projects/hangman-game/",
+      tags: ['React', 'Tailwind CSS', 'Redux'],
+      projectCategory: ProjectCategory.PERSONAL
+    },
+    {
+      id: 8,
       name: "Web template",
       description: "A modular, component-based website template built with the TWIG template engine, Bootstrap, jQuery, SCSS, Slick, Webpack, and more. The template includes a configurator for displaying different options across various pages.",
       imageUrl: dmt1Image,
       demoUrl: "http://t1.dimedia.hr/",
-      tags: [],
-      projectCategory: ProjectCategory.PROFESSIONAL
-    },
-    {
-      id: 8,
-      name: "Begamont Gradjenje",
-      description: "A website targeted at the residential building market, built with the TWIG template engine, Bootstrap, Sass, Webpack, jQuery, and more. The website includes features such as SVG ground plan hover and click events, a fullscreen lightbox gallery, and more.",
-      imageUrl: begamontImage,
-      demoUrl: "https://www.begamont-gradjenje.hr/",
-      tags: [],
+      tags: ['TWIG', 'SCSS', 'jQuery'],
       projectCategory: ProjectCategory.PROFESSIONAL
     },
     {
       id: 9,
+      name: "Begamont Gradjenje",
+      description: "A website targeted at the residential building market, built with the TWIG template engine, Bootstrap, Sass, Webpack, jQuery, and more. The website includes features such as SVG ground plan hover and click events, a fullscreen lightbox gallery, and more.",
+      imageUrl: begamontImage,
+      demoUrl: "https://www.begamont-gradjenje.hr/",
+      tags: ['TWIG', 'SCSS', 'jQuery'],
+      projectCategory: ProjectCategory.PROFESSIONAL
+    },
+    {
+      id: 10,
       name: "Library webshop",
       description: "A library webshop built with the PrestaShop e-commerce solution, featuring a custom theme and modules.",
       imageUrl: ljevakImage,
       demoUrl: "https://www.ljevak.hr/",
-      tags: [],
+      tags: ['PrestaShop', 'SCSS', 'jQuery', 'Smarty'],
       projectCategory: ProjectCategory.PROFESSIONAL
     }
   ];
