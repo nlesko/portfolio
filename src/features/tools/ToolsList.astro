@@ -11,7 +11,7 @@ const { tools, listStyle } = Astro.props;
 {tools?.length > 0 && tools.map((tool, index) => {
     if(tool.isFeatured) {
         return (
-        <Tag textSize="text-sm">
+        <Tag textSize="text-sm" color={tool.isHighlighted ? 'bg-dark-wood-700/90' : null}>
             {tool.name}
         </Tag>
         )          
@@ -19,4 +19,4 @@ const { tools, listStyle } = Astro.props;
     return null;
     })
 }
-</div>
+</div>  

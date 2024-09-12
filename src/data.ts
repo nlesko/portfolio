@@ -1,7 +1,4 @@
-import { transformSlots } from 'astro/jsx-runtime';
-import type { Feature } from './features/features/Features';
-import type { Tool } from './features/tools/Tools';
-import { ProjectCategory, ToolCategory, type Project } from './env.d';
+import { ProjectCategory, ToolCategory, type Feature, type Project, type Tool } from './env.d';
 import cryptoCurrencyTrackerImage from './assets/images/projects/cryptocurrency-tracker.jpg';
 import xmasCountDownClockImage from './assets/images/projects/countdown-clock.jpg';
 import guessTheColorGameImage from './assets/images/projects/guess-the-color-game.jpg';
@@ -43,7 +40,8 @@ export const tools: Array<Tool> = [
       name: 'React',
       icon: "ReactJs",
       category: ToolCategory.FRONTEND,
-      isFeatured: true
+      isFeatured: true,
+      isHighlighted: true
     },
     {
       id: 2,
@@ -85,14 +83,16 @@ export const tools: Array<Tool> = [
       name: "VueJS",
       icon: "VueJs",
       category: ToolCategory.FRONTEND,
-      isFeatured: false
+      isFeatured: true,
+      isHighlighted: true
     },
     {
       id: 8,
       name: "Express",
       icon: "ExpressJs",
       category: ToolCategory.BACKEND,
-      isFeatured: false
+      isFeatured: true,
+      isHighlighted: true
     },
     {
       id: 9,
@@ -113,14 +113,15 @@ export const tools: Array<Tool> = [
       name: "PostgreSQL",
       icon: "PostgreSql",
       category: ToolCategory.BACKEND,
-      isFeatured: true
+      isFeatured: true,
+      isHighlighted: true
     },
     {
       id: 12,
       name: "Git",
       icon: "Git",
       category: ToolCategory.OTHER,
-      isFeatured: false
+      isFeatured: true
     },
     {
       id: 13,
@@ -142,6 +143,7 @@ export const tools: Array<Tool> = [
       icon: "DotNet",
       category: ToolCategory.BACKEND,
       isFeatured: true,
+      isHighlighted: true
     },
     {
       id: 16,
@@ -149,12 +151,62 @@ export const tools: Array<Tool> = [
       icon: "Docker",
       category: ToolCategory.OTHER,
       isFeatured: false
+    },
+    {
+      id: 17,
+      name: 'NuxtJS',
+      icon: "NuxtJs",
+      category: ToolCategory.FULLSTACK,
+      isFeatured: true,
+      isHighlighted: true
+    },
+    {
+      id: 18,
+      name: 'NextJS',
+      icon: "NextJs",
+      category: ToolCategory.FULLSTACK,
+      isFeatured: true,
+      isHighlighted: true
+    },
+    {
+      id: 19,
+      name: 'Astro',
+      icon: "Astro",
+      category: ToolCategory.FULLSTACK,
+      isFeatured: true
     }
   ];
 
   export const projects: Array<Project> = [
     {
       id: 1,
+      name: "Library webshop",
+      description: "A library webshop built with the PrestaShop e-commerce solution, featuring a custom theme and modules.",
+      imageUrl: ljevakImage,
+      demoUrl: "https://www.ljevak.hr/",
+      tags: ['PrestaShop', 'SCSS', 'jQuery', 'Smarty'],
+      projectCategory: ProjectCategory.PROFESSIONAL
+    },
+    {
+      id: 2,
+      name: "Begamont Gradjenje",
+      description: "A website targeted at the residential building market, built with the TWIG template engine, Bootstrap, Sass, Webpack, jQuery, and more. The website includes features such as SVG ground plan hover and click events, a fullscreen lightbox gallery, and more.",
+      imageUrl: begamontImage,
+      demoUrl: "https://www.begamont-gradjenje.hr/",
+      tags: ['TWIG', 'SCSS', 'jQuery'],
+      projectCategory: ProjectCategory.PROFESSIONAL
+    },
+    {
+      id: 3,
+      name: "Web template",
+      description: "A modular, component-based website template built with the TWIG template engine, Bootstrap, jQuery, SCSS, Slick, Webpack, and more. The template includes a configurator for displaying different options across various pages.",
+      imageUrl: dmt1Image,
+      demoUrl: "http://t1.dimedia.hr/",
+      tags: ['TWIG', 'SCSS', 'jQuery'],
+      projectCategory: ProjectCategory.PROFESSIONAL
+    },
+    {
+      id: 4,
       name: "Hangman",
       description: "A simple Hangman game made with React. The game asks you to guess the word by selecting letters from the alphabet. The game features a hint button that reveals a letter in the word.",
       imageUrl: hangmanGameImage,
@@ -164,7 +216,7 @@ export const tools: Array<Tool> = [
       projectCategory: ProjectCategory.PERSONAL
     },
     {
-      id: 2,
+      id: 5,
       name: "Cryptocurrency Tracker",
       description: "A cryptocurrency tracker built with vanilla JavaScript using the Coinranking API. The web application lists 50 cryptocurrencies and displays their icon, name, current worth in US dollars, and the change in value over the last 24 hours.",
       imageUrl: cryptoCurrencyTrackerImage,
@@ -174,7 +226,7 @@ export const tools: Array<Tool> = [
       projectCategory: ProjectCategory.PERSONAL
     },
     {
-      id: 3,
+      id: 6,
       name: "Guess the Color Game",
       description: "A simple 'Guess the Color' game made with JavaScript. The game asks you to guess the color corresponding to the RGB value shown in the header.",
       imageUrl: guessTheColorGameImage,
@@ -184,7 +236,7 @@ export const tools: Array<Tool> = [
       projectCategory: ProjectCategory.PERSONAL
     },
     {
-      id: 4,
+      id: 7,
       name: "Christmas Countdown Clock",
       description: "In the holiday spirit, I decided to create a simple Christmas countdown clock. It features a countdown timer that tracks the time remaining until December 25, 00:00:01 AM. Additionally, I added a simple snow-like background using canvas. And what kind of Christmas would it be without some festive lights? :",
       imageUrl: xmasCountDownClockImage,
@@ -192,32 +244,5 @@ export const tools: Array<Tool> = [
       demoUrl: "https://nlesko.github.io/projects/christmas-countdown-clock/",
       tags: ['JavaScript', 'CSS', 'canvas'],
       projectCategory: ProjectCategory.PERSONAL
-    },
-    {
-      id: 8,
-      name: "Web template",
-      description: "A modular, component-based website template built with the TWIG template engine, Bootstrap, jQuery, SCSS, Slick, Webpack, and more. The template includes a configurator for displaying different options across various pages.",
-      imageUrl: dmt1Image,
-      demoUrl: "http://t1.dimedia.hr/",
-      tags: ['TWIG', 'SCSS', 'jQuery'],
-      projectCategory: ProjectCategory.PROFESSIONAL
-    },
-    {
-      id: 9,
-      name: "Begamont Gradjenje",
-      description: "A website targeted at the residential building market, built with the TWIG template engine, Bootstrap, Sass, Webpack, jQuery, and more. The website includes features such as SVG ground plan hover and click events, a fullscreen lightbox gallery, and more.",
-      imageUrl: begamontImage,
-      demoUrl: "https://www.begamont-gradjenje.hr/",
-      tags: ['TWIG', 'SCSS', 'jQuery'],
-      projectCategory: ProjectCategory.PROFESSIONAL
-    },
-    {
-      id: 10,
-      name: "Library webshop",
-      description: "A library webshop built with the PrestaShop e-commerce solution, featuring a custom theme and modules.",
-      imageUrl: ljevakImage,
-      demoUrl: "https://www.ljevak.hr/",
-      tags: ['PrestaShop', 'SCSS', 'jQuery', 'Smarty'],
-      projectCategory: ProjectCategory.PROFESSIONAL
     }
   ];

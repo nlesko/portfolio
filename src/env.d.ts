@@ -10,7 +10,8 @@ export enum ListStyle {
 export enum ToolCategory {
     FRONTEND=1,
     BACKEND=2,
-    OTHER=3
+    OTHER=3,
+    FULLSTACK=4
 }
 
 export enum ProjectCategory {
@@ -24,6 +25,7 @@ export type Tool = {
     icon?: string;
     category: ToolCategory;
     isFeatured: boolean;
+    isHighlighted?: boolean;
 }
 export type Feature = {
     id: number;

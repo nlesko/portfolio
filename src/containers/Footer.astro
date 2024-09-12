@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
-const socilaLinks = [
+const socialLinks = [
     {
         id: 1,
         name: "LinkedIn",
@@ -16,15 +16,15 @@ const socilaLinks = [
     }
 ]
 ---
-<footer class="w-full pt-40 pb-20">
+<footer class="w-full pt-40 pb-10">
     <div class="container mx-auto px-4">
       <div class="flex flex-col items-center">
           <p class="text-2xl">
               Bringing ideas to life, one line of code at a time.
           </p>
-          <div class="my-7" />
+          <div class="my-3" />
           <ul class="flex flex-row gap-5">
-              {socilaLinks.map((link) => (
+              {socialLinks.map((link) => (
               <li class="flex items-center">
                   <a href={link.href} target="_blank  " class="flex items-center justify-center w-12 h-12 rounded-full border-2 border-slate-500 hover:bg-white hover:border-white hover:text-black transition-all duration-300">
                       <Icon name={link.icon} class={`h-5 w-5 ${link.iconClass}`} />
@@ -32,7 +32,7 @@ const socilaLinks = [
               </li>
               ))}                    
           </ul>
-          <div class="my-7" />
+          <div class="my-10" />
           <p class="">
           Web development for unique and innovative projects.
           </p>
