@@ -13,11 +13,10 @@ const { feature } = Astro.props;
     <Card className="bg-steel-blue-800/30 px-8 py-12 shadow-md">
         <div class="flex items-center justify-center">
             {feature.icon ? feature.pack ? <Icon pack:name={feature.pack} name={feature.icon} class="w-7 h-7" /> : <Icon name={feature.icon} class="w-7 h-7" />  : null }
-            <h4 class='ml-4 text-xl'>{feature.name}</h4>
+            <h3 class='ml-4 text-xl'>{feature.name}</h3>
         </div>
         <div class="my-2" />
         <div class='text-center'>
-            
             <div class="my-2" />
             <p class="text-base">
                 {feature.description}

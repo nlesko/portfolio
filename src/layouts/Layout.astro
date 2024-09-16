@@ -2,28 +2,34 @@
 import Footer from "../containers/Footer.astro";
 interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const url = canonicalUrl.href;
+let { title, description } = Astro.props;
+
+if(!description) {
+	description = "Explore Nikola Leško's portfolio showcasing his expertise in full-stack web development and software engineering. Specializing in performance, scalability, and responsive design, Nikola delivers high-quality web applications using cutting-edge technologies like React, TypeScript, Node.js, and more. Learn about his latest projects and connect for collaboration.";
+}
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="canonical" href={url} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta name="description" content={description} />
 	</head>
 	<body>
 		<main>
 			<slot />
 		</main>
 		<Footer />
-
-		
 	</body>
 </html>
 <style is:global>

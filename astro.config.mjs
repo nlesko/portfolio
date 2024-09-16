@@ -5,5 +5,6 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://nikolalesko.com',
   integrations: [tailwind(), react(), icon()]
 });
